@@ -36,19 +36,22 @@ with open (budget_data_csv, newline = "") as csvfile:
 
 averageprofitchange = round((sum(changeofprofits_list[1:]))/(len(changeofprofits_list[1:])),2)
 
+print("Financial Analysis")
+print("------------------------------")
 print("Total months: " + str(summonths))
-print("Total: " + str(sumprofits))
+print("Net Profits: " + str(sumprofits))
 print("Average  change: " + str(averageprofitchange))
-print("Greatest increase: " + str(greatestincrease[1]))
-print("Greatest decrease: " +str(greatestdecrease[1]))
+print("Greatest increase in profits: " + str(greatestincrease[0]) + " (" + str(greatestincrease[1]) + ")")
+print("Greatest decrease in profits: " + str(greatestdecrease[0]) + " (" + str(greatestdecrease[1]) + ")")
 
 
 analysis_file = "PyBank/analysis/analysis.txt"
 
 with open(analysis_file, 'w') as txtfile:
     txtfile.write("Financial Analysis\n")
+    txtfile.write("------------------------------\n")
     txtfile.write("Total months: " + str(summonths)+"\n")
-    txtfile.write("Total: " + str(sumprofits)+"\n")
+    txtfile.write("Net Profits: " + str(sumprofits)+"\n")
     txtfile.write("Average  change: " + str(averageprofitchange)+"\n")
-    txtfile.write("Greatest increase: " + str(greatestincrease[1])+"\n")
-    txtfile.write("Greatest decrease: " +str(greatestdecrease[1])+"\n")
+    txtfile.write("Greatest increase: " + str(greatestincrease[0]) + " (" + str(greatestincrease[1]) + ")\n")
+    txtfile.write("Greatest decrease: " + str(greatestdecrease[0]) + " (" + str(greatestdecrease[1]) + ")\n")

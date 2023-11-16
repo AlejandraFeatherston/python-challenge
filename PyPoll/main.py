@@ -23,11 +23,11 @@ with open(election_data_csv, newline = '') as csvfile:
             candidate_list.append(each_row[2])
         
     for i in range(len(candidate_list)):
-        count = 0
+        total = 0
         for j in range(len(totalvotes)):
             if candidate_list[i] == totalvotes[j]:
-                count += 1
-        candidate_votes.append(count)
+                total += 1
+        candidate_votes.append(total)
     
     for x in range(len(candidate_list)):
         percentagevotes_per_candidate = round(candidate_votes[x]/votescast*100,3)
@@ -44,3 +44,16 @@ with open(election_data_csv, newline = '') as csvfile:
     print("-----------------------------")
     print("Winner: " + str(candidate_list[winnerIndex]))
     print("-----------------------------")
+
+analysis_results = "PyPoll/analysis/analysis_results.txt"
+
+with open(analysis_results, 'w') as txtfile:
+    txtfile.write("Election Results\n")
+    txtfile.write("-----------------------------\n")
+    txtfile.write("Total Votes: " + str(votescast) + "\n")
+    txtfile.write("-----------------------------\n")
+    for a in range(len(candidate_list)):
+        txtfile.write(str(candidate_list[a]) + ": " + str(percentagevotes_per_candidate_list[a]) + "% (" + str(candidate_votes[a]) + ")\n")
+    txtfile.write("-----------------------------\n")
+    txtfile.write("Winner: " + str(candidate_list[winnerIndex]) + "\n")
+    txtfile.write("-----------------------------\n")
