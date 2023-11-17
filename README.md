@@ -3,3 +3,4 @@
 - I used this link to recall how to get the max value of a list: https://www.tutorialspoint.com/python/list_max.htm
 - I used this link to recall how to loop through a list: https://www.w3schools.com/python/python_lists_loop.asp
 - I used this link to figure out how to find if a value does not equal to one in a list: https://www.tutorialspoint.com/list-methods-in-python-in-not-in-len-min-max
+- Pankaj, my TA, also helped me figure out the if statements for the max and min values in PyBank
